@@ -17,7 +17,15 @@ function CreateShoppingList({ setList, list, itemValue, setItemValue, id, setId 
     
                 {list.map(shoppingItem =>{
                     return (
-                            <li key={shoppingItem.id}>{shoppingItem.value}
+                            <li key={shoppingItem.id}>
+                                <input value={shoppingItem.value} className="shopItem" onChange={(e) =>{
+                                    setList((prev: ShoppingItem[]) =>{        
+                                        return prev.map(listElement =>{
+                                            return listElement.id === shoppingItem.id ? {...listElement, value: e.target.value} :
+                                            listElement;
+                                        });
+                                    })
+                                }} />
                                 <button onClick={() =>{
                                     removeListener(shoppingItem);
                                     }
