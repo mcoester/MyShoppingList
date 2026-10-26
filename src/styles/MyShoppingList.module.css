@@ -1,0 +1,47 @@
+.ul{
+    list-style: none;
+    width: 100%;
+    padding: 0;
+}
+
+.li{
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+
+.input{
+    border: none;
+    border-radius: 8px;
+    font-size: medium;
+    height: 1.5rem;
+    width: 50%;
+}
+
+.input:hover{
+    background-color: #cbd5e1;
+    color: #1f2937;
+}
+
+.removeButton{
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.saveButton{
+    height: 2rem;
+    width: 4rem;
+    cursor: pointer;
+}
+
+.saveContainer{
+    margin-top: 2rem;
+    width: 85%;
+    display: flex;
+    justify-content: end;
+}

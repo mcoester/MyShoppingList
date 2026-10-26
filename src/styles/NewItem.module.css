@@ -1,0 +1,25 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.button{
+    margin-left: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.button:hover{
+    cursor: pointer;
+}
+
+.input{
+    height: 2rem;
+    width: 50%;
+    font-size: medium;
+}

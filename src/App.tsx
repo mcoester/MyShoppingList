@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
-import type { ChangeEvent, Dispatch, SetStateAction } from 'react';
+import type { Dispatch, SetStateAction } from 'react';
 import Landingpage from './Landingpage.tsx';
 import Navigationbar from './Navigationbar.tsx';
 import CreateShoppingList from './CreateShoppingList.tsx';
 import ViewAllShoppingLists from './ViewAllShoppingLists.tsx';
 import Name from './Name.tsx';
 import MyShoppingList from './MyShoppingList.tsx';
+import styles from "./styles/App.module.css";
 
 export interface ShoppingItem{
   id?: number,
@@ -75,15 +76,19 @@ function App() {
   }, []);
   
   return (
-    <>
-      <Navigationbar changeView={changeView} setList={setList} setShoppingLists={setShoppingLists} setStorageId={setStorageId} />
-      <View changeView={changeView} 
-      setList={setList} list={list} 
-      itemValue={itemValue} setItemValue={setItemValue}
-      setId={setId} id={id} name={name} setName={setName}
-      setShoppingLists={setShoppingLists} shoppingLists={shoppingLists} index={index} setIndex={setIndex}
-      setStorageId={setStorageId} storageId={storageId} />
-    </>
+    <div role="presentation" className={styles.container}>
+      <header>
+        <Navigationbar setName={setName} changeView={changeView} setList={setList} setShoppingLists={setShoppingLists} setStorageId={setStorageId} />
+      </header>
+      <main>
+        <View changeView={changeView} 
+        setList={setList} list={list} 
+        itemValue={itemValue} setItemValue={setItemValue}
+        setId={setId} id={id} name={name} setName={setName}
+        setShoppingLists={setShoppingLists} shoppingLists={shoppingLists} index={index} setIndex={setIndex}
+        setStorageId={setStorageId} storageId={storageId} />
+      </main>
+    </div>
   );
 }
 

@@ -1,5 +1,6 @@
-import type { ListProps, ViewProps, ShoppingItem } from "./App.tsx";
+import type { ListProps, ShoppingItem } from "./App.tsx";
 import type { ChangeEvent } from 'react';
+import styles from './styles/NewItem.module.css';
 
 function NewItem({ setList, itemValue, setItemValue, setId, id }: ListProps){
     function addListener(){
@@ -17,14 +18,12 @@ function NewItem({ setList, itemValue, setItemValue, setId, id }: ListProps){
         setItemValue(e.target.value);
     }
     return(
-        <>
-            <li>
-                <input type="text" value={itemValue} onChange={handleChange} />
-                <button onClick={addListener} >
-                    +
-                </button>
-            </li>
-        </>
+        <div className={styles.container}>
+            <input type="text" value={itemValue} onChange={handleChange} className={styles.input} />
+            <button onClick={addListener} className={styles.button} >
+                +
+            </button>   
+        </div>
     )
 }
 

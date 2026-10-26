@@ -1,0 +1,25 @@
+.container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.containerItem{
+    margin-top: 1rem;
+}
+
+.nameInput{
+    height: 1.5rem;
+    font-size: medium;
+    width: 50%;
+}
+
+.nameButton{
+    margin-left: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+}
+
+.nameButton:hover{
+    cursor: pointer;
+}

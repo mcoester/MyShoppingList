@@ -1,7 +1,8 @@
 import type { Dispatch, SetStateAction } from "react";
 import type { ShoppingItem } from "./App.tsx";
+import styles from './styles/ViewAllShoppingLists.module.css';
 
-function ViewAllShoppingLists({ shoppingLists, changeView, setIndex, setList, storageId, setStorageId }: {shoppingLists: ShoppingItem[][] | [], changeView(view: string): void, 
+function ViewAllShoppingLists({ shoppingLists, changeView, setIndex, setList, setStorageId }: {shoppingLists: ShoppingItem[][] | [], changeView(view: string): void, 
     setIndex(i: number): void, setList: Dispatch<SetStateAction<ShoppingItem[]>>, 
     storageId: number, setStorageId: Dispatch<SetStateAction<number>> }){
     
@@ -10,7 +11,7 @@ function ViewAllShoppingLists({ shoppingLists, changeView, setIndex, setList, st
         <>
             {
                 shoppingLists.map((element, index) =>{
-                    return <li><a href="#" onClick={() =>{
+                    return <li className={styles.li}><a className={styles.a} href="#" onClick={() =>{
                         changeView('myshoppinglist');
                         setIndex(index);
                         const chosenList = shoppingLists[index];
@@ -28,10 +29,10 @@ function ViewAllShoppingLists({ shoppingLists, changeView, setIndex, setList, st
     return (
         <>
             <h1>Meine Einkauflisten:</h1>
-            <ul>
-                <>
+            <ul className={styles.ul}>
+                <div role="presentation" className={styles.container}>
                     {renderShoppingLists()}
-                </>
+                </div>
             </ul>
         </>
     );

@@ -1,6 +1,7 @@
-import type { ViewProps } from "./App.tsx";
 
-function Landingpage({ changeView }: ViewProps){
+
+
+function Landingpage(){
     return(
         <>
             <h1>Herzlich Willkommen</h1>
